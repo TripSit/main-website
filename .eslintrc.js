@@ -22,7 +22,7 @@ module.exports = {
 				'gatsby-config.js',
 				'jest*.js',
 				'**/__mocks__/**',
-				'/loadershim.js',
+				'./loadershim.js',
 			],
 			parserOptions: { sourceType: 'script' },
 			env: {

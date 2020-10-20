@@ -3,7 +3,7 @@ import DocumentHead from '../components/DocumentHead';
 import Layout from '../components/Layout';
 
 export default function Home() {
-  return (
+	return (
 		<>
 			<DocumentHead title="Home" />
 			<Layout>
