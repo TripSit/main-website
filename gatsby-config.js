@@ -15,9 +15,10 @@ module.exports = {
 		author: name,
 	},
 	plugins: [
+		'gatsby-plugin-typescript',
+		'gatsby-plugin-react-helmet',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
-		'gatsby-plugin-react-helmet',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
