@@ -1,12 +1,9 @@
 'use strict';
 
-const baseParserOptions = { project: './tsconfig.json' };
-
 module.exports = {
 	root: true,
 	extends: 'airbnb-typescript',
-	parser: '@typescript-eslint/parser',
-	parserOptions: baseParserOptions,
+	parser: 'babel-eslint',
 	env: { browser: true },
 	rules: {
 		indent: [2, 'tab'],
@@ -23,16 +20,22 @@ module.exports = {
 	overrides: [
 		{
 			files: [
+				'./src/**/*.ts',
+				'./src/**/*.tsx',
+			],
+			parser: '@typescript-eslint/parser',
+			parserOptions: { project: './tsconfig.json' },
+		},
+		{
+			files: [
 				'.eslintrc.js',
 				'gatsby-*.js',
-				'jest*.js',
+				'jest.config.js',
+				'jest-preprocess.js',
 				'**/__mocks__/**',
 				'./loadershim.js',
 			],
-			parserOptions: {
-				...baseParserOptions,
-				sourceType: 'script'
-			},
+			parserOptions: { project: './tsconfig.json', sourceType: 'script'	},
 			env: {
 				browser: false,
 				node: true,
