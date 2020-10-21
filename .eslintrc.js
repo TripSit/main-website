@@ -19,7 +19,7 @@ module.exports = {
 		{
 			files: [
 				'.eslintrc.js',
-				'gatsby-config.js',
+				'gatsby-*.js',
 				'jest*.js',
 				'**/__mocks__/**',
 				'./loadershim.js',

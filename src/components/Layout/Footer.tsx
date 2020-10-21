@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-export default function LayoutFooter() {
+export default function LayoutFooter(): ReactElement {
 	return (
 		<footer>
 			<h1>Footer</h1>

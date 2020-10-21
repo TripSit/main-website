@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 
 interface Props {
 	title: string;
 }
 
-export default function DocumentHead({ title }: Props) {
+export default function DocumentHead({ title }: Props): ReactElement {
 	return (
 		<Helmet>
 			<meta charSet="utf-8" />
