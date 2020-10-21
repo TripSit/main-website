@@ -15,6 +15,7 @@ module.exports = {
 		'react/jsx-one-expression-per-line': 0,
 		'react/forbid-prop-types': 0,
 		'react/require-default-props': 0,
+		'react/no-danger': 0,
 		'@typescript-eslint/indent': [2, 'tab'],
 	},
 	overrides: [

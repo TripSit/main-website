@@ -16,6 +16,7 @@ export default function LayoutHeader(): ReactElement {
 					<Nav as="ul">
 						<NavItem href="/">Home</NavItem>
 						<NavItem href="/chat" hardLoad>Chat</NavItem>
+						<NavItem href="/contact-us">Contact Us</NavItem>
 					</Nav>
 				</nav>
 			</Navbar.Collapse>
