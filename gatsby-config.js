@@ -51,19 +51,5 @@ module.exports = {
 				},
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				name,
-				short_name: name,
-				description,
-				homepage_url: url,
-				start_url: '/',
-				background_color: '#fff',
-				theme_color: '#000',
-				display: 'standalone',
-				icons: [],
-			},
-		},
 	],
 };

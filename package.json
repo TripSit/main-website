@@ -24,6 +24,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
     "@testing-library/react": "^11.1.0",
     "@types/react": "^16.9.53",
     "@types/react-helmet": "^6.1.0",
@@ -37,7 +38,6 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "gatsby-plugin-manifest": "^2.4.35",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.3.19",
     "gatsby-plugin-sharp": "^2.6.43",
