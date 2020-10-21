@@ -3,15 +3,15 @@ import Header from './Header';
 import Footer from './Footer';
 
 interface Props {
-	children: React.ReactElement;
+	children: JSX.Element;
 }
 
-export default function Layout(props: Props) {
+export default function Layout({ children }: Props) {
 	return (
 		<>
 			<Header />
 			<main>
-				{props.children}
+				{children}
 			</main>
 			<Footer />
 		</>

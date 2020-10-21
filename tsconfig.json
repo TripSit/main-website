@@ -1,11 +1,14 @@
 {
 	"include": ["./src/**/*"],
 	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"lib": ["dom", "es2020"],
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["ESNext", "DOM"],
 		"jsx": "react",
 		"strict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noImplicitReturns": true,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"noEmit": true,
