@@ -3,8 +3,6 @@ import styles from './HeroIntro.module.scss';
 
 export default function HomeHeroIntro(): ReactElement {
 	return (
-		<section className={styles.container}>
-
-		</section>
+		<section className={styles.container} />
 	);
 }

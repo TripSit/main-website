@@ -14,8 +14,8 @@ export default function LayoutHeader(): ReactElement {
 			<Navbar.Collapse id="main-header">
 				<nav>
 					<Nav as="ul">
-						<NavItem to="/">Home</NavItem>
-						<NavItem to="/chat">Chat</NavItem>
+						<NavItem href="/">Home</NavItem>
+						<NavItem href="/chat" hardLoad>Chat</NavItem>
 					</Nav>
 				</nav>
 			</Navbar.Collapse>

@@ -4,15 +4,26 @@ import { Nav } from 'react-bootstrap';
 
 interface Props {
 	children: ReactNode;
-	to: string;
+	href: string;
+	hardLoad?: boolean;
 }
 
-export default function HeaderNavItem({ children, to }: Props): ReactElement {
+export default function HeaderNavItem({
+	children,
+	href,
+	hardLoad = false,
+}: Props): ReactElement {
 	return (
 		<Nav.Item as="li">
-			<Nav.Link as={Link} to={to}>
-				{children}
-			</Nav.Link>
+			{hardLoad ? (
+				<Nav.Link href={href}>
+					{children}
+				</Nav.Link>
+			) : (
+				<Nav.Link as={Link} href={href} to={href}>
+					{children}
+				</Nav.Link>
+			)}
 		</Nav.Item>
 	);
 }
