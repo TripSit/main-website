@@ -1,14 +1,18 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 import { Navbar, Nav, Image } from 'react-bootstrap';
-import styles from './index.module.scss';
-import NavItem from './NavItem';
+import NavItem from './nav-item';
+
+const Logo = styled(Image)`
+	max-height: 2.8rem;
+`;
 
 export default function LayoutHeader(): ReactElement {
 	return (
 		<Navbar as="header" variant="dark" bg="dark" expand="lg">
 			<Navbar.Brand as={Link} to="/">
-				<Image className={styles.logo} src="/images/logo.svg" alt="TripSit logo" fluid />
+				<Logo src="/images/logo.svg" alt="TripSit logo" fluid />
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="main-header" />
 			<Navbar.Collapse id="main-header">
