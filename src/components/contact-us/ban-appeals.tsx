@@ -3,7 +3,7 @@ import { Button, Row, Col } from 'react-bootstrap';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormControls from './form-controls';
-import { TextField, TextareaField } from '../fields';
+import { TextField, TextareaField } from '..';
 
 interface Values {
 	nick: string;

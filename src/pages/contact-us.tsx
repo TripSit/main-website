@@ -1,10 +1,9 @@
 import React, { StrictMode, ReactElement } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from 'react-bootstrap';
-import DocumentHead from '../components/document-head';
-import Layout from '../components/layout';
-import Accordion from '../components/accordion';
-import * as ContactUs from '../components/contact-us';
+import {
+	DocumentHead, Layout, Accordion, ContactUs,
+} from '../components';
 
 export default function ContactUsPage(): ReactElement {
 	const queryResult = useStaticQuery(graphql`
@@ -35,7 +34,8 @@ export default function ContactUsPage(): ReactElement {
 						</Accordion.Item>
 						{/* <Accordion.Item
 							eventKey="suggestions"
-							title="I have a question/suggestion about your substance information (Wiki, factsheets, or other info)."
+							title="I have a question/suggestion about your substance information
+							(Wiki, factsheets, or other info)."
 						>
 							<ContactUs.Suggestions />
 						</Accordion.Item> */}
