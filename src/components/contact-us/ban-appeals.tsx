@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
-import { Form as FormikForm } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormControls from './form-controls';
-import useForm from '../../hooks/use-form';
 import { TextField, TextareaField } from '../fields';
 
 interface Values {
@@ -23,19 +22,9 @@ const validationSchema: Yup.ObjectSchema<Values> = Yup.object().shape({
 }).required();
 
 const ContactUsBanAppeals: React.FC = () => {
-	const { isSubmitting, errors } = useForm<Values>({
-		validationSchema,
-		initialValues: {
-			nick: '',
-			email: '',
-			understanding: '',
-			additionalInformation: '',
-			prevention: '',
-		},
-		async onSubmit(values: Values) {
-			console.log(values);
-		},
-	});
+	async function handleSubmit(values: Values) {
+		console.log(values);
+	}
 
 	return (
 		<section>
@@ -45,62 +34,71 @@ const ContactUsBanAppeals: React.FC = () => {
 				us, and we&apos;ll use this information to answer your question. Be as detailed and honest
 				as you can. Thank you!
 			</p>
-			<FormikForm>
-				<Row>
-					<Col xs={12} sm={6}>
-						<TextField
-							name="nick"
-							label="IRC Nick / Username:"
-							disabled={isSubmitting}
-							error={errors.nick}
-							required
-						/>
-					</Col>
-					<Col xs={12} sm={6}>
-						<TextField
-							name="email"
-							label="Email"
-							type="email"
-							disabled={isSubmitting}
-							error={errors.email}
-							required
-						/>
-					</Col>
-					<Col xs={12}>
-						<TextareaField
-							name="understanding"
-							label="If you know why you were banned do you understand why you were removed? If so,
-								list the reason, otherwise we&apos;ll respond to the above email with a
-								clarification	on your removal."
-							disabled={isSubmitting}
-							error={errors.understanding}
-						/>
-					</Col>
-					<Col xs={12}>
-						<TextareaField
-							name="additionalInformation"
-							label="Is there any other background information about the removal that you would
-								like to give us?"
-							disabled={isSubmitting}
-							error={errors.additionalInformation}
-						/>
-					</Col>
-					<Col xs={12}>
-						<TextareaField
-							name="prevention"
-							label="What have you done to ensure that the above does not happen in the future?"
-							disabled={isSubmitting}
-							error={errors.prevention}
-						/>
-					</Col>
-				</Row>
-				<Row>
-					<FormControls xs={12}>
-						<Button type="reset" variant="warning">Reset</Button>
-						<Button type="submit" variant="success">Submit</Button>
-					</FormControls>
-				</Row>
-			</FormikForm>
+			<Formik
+				validationSchema={validationSchema}
+				initialValues={{
+					nick: '',
+					email: '',
+					understanding: '',
+					additionalInformation: '',
+					prevention: '',
+				}}
+				onSubmit={handleSubmit}
+			>
+				{({ isSubmitting }) => (
+					<Form>
+						<Row>
+							<Col xs={12} sm={6}>
+								<TextField
+									name="nick"
+									label="IRC Nick / Username:"
+									disabled={isSubmitting}
+									required
+								/>
+							</Col>
+							<Col xs={12} sm={6}>
+								<TextField
+									name="email"
+									label="Email"
+									type="email"
+									disabled={isSubmitting}
+									required
+								/>
+							</Col>
+							<Col xs={12}>
+								<TextareaField
+									name="understanding"
+									label="If you know why you were banned do you understand why you were removed? If so,
+										list the reason, otherwise we&apos;ll respond to the above email with a
+										clarification	on your removal."
+									disabled={isSubmitting}
+								/>
+							</Col>
+							<Col xs={12}>
+								<TextareaField
+									name="additionalInformation"
+									label="Is there any other background information about the removal that you would
+										like to give us?"
+									disabled={isSubmitting}
+								/>
+							</Col>
+							<Col xs={12}>
+								<TextareaField
+									name="prevention"
+									label="What have you done to ensure that the above does not happen in the future?"
+									disabled={isSubmitting}
+								/>
+							</Col>
+						</Row>
+						<Row>
+							<FormControls xs={12}>
+								<Button type="reset" variant="warning">Reset</Button>
+								<Button type="submit" variant="success">Submit</Button>
+							</FormControls>
+						</Row>
+					</Form>
+				)}
+			</Formik>
 
 			<h2>If you don&apos;t know why you&apos;re banned</h2>
 			<p>
