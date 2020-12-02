@@ -1,10 +1,14 @@
 import React, { StrictMode, ReactElement } from 'react';
 import { DocumentHead, Layout, HeroIntro } from '../components';
 
-export default function Home(): ReactElement {
+interface Props {
+	name: string;
+}
+
+export default function FactsheetTemplate({ name }: Props): ReactElement {
 	return (
 		<StrictMode>
-			<DocumentHead title="Home" />
+			<DocumentHead title={`Factsheet - ${name}`} />
 			<Layout>
 				<HeroIntro />
 			</Layout>

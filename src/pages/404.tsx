@@ -1,6 +1,5 @@
 import React, { StrictMode, ReactElement } from 'react';
-import DocumentHead from '../components/document-head';
-import Layout from '../components/layout';
+import { Layout, DocumentHead } from '../components';
 
 export default function NotFoundPage(): ReactElement {
 	return (
